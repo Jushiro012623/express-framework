@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 
-export function Controller(prefix: string = ''): ClassDecorator {
+function Controller(prefix: string = ''): ClassDecorator {
     return (target) => {
         Reflect.defineMetadata('prefix', prefix, target);
         if (!Reflect.hasMetadata('routes', target)) {
@@ -8,6 +8,7 @@ export function Controller(prefix: string = ''): ClassDecorator {
         }
     };
 }
+
 interface RouteDefinition {
     path: string;
     method: string;
@@ -30,7 +31,9 @@ function createRouteDecorator(method: string) {
         };
 }
 
-export const Get = createRouteDecorator('get');
-export const Post = createRouteDecorator('post');
-export const Put = createRouteDecorator('put');
-export const Delete = createRouteDecorator('delete');
+const Get = createRouteDecorator('get');
+const Post = createRouteDecorator('post');
+const Put = createRouteDecorator('put');
+const Delete = createRouteDecorator('delete');
+
+export { Controller, Get, Post, Put, Delete };

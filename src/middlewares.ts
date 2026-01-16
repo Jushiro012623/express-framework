@@ -6,7 +6,7 @@ import { UserController } from "./user/user.controller";
 
 class AppMiddleware {
 
-    private app: Application;
+    readonly app: Application;
 
     private controller = [
         UserController

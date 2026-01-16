@@ -3,8 +3,8 @@ import AppMiddleware from './middlewares';
 
 class ExpressApp {
 
-    private app: Application
-    private middleware: AppMiddleware
+    readonly app: Application
+    readonly middleware: AppMiddleware
 
     constructor() {
         this.app = express()

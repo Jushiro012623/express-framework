@@ -1,0 +1,28 @@
+## GET ALL USERS
+GET localhost:5001/users
+
+### GET USER
+GET localhost:5001/users/8
+
+### CREATE USER
+POST http://localhost:5001/users
+Content-Type: application/json
+
+{
+    "email": "ivanallen64@gmail.com",
+    "password": "password123",
+    "username": "akosinella"
+}
+
+### UPDATE USER
+PUT http://localhost:5001/users/8
+Content-Type: application/json
+
+{
+  "email": "ivanallen64@yahoo.mail"
+}
+
+### DELETE USER
+DELETE http://localhost:5001/users/8
+Content-Type: application/json
+
